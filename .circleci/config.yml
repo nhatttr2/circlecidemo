@@ -13,7 +13,7 @@ jobs:
       command: | 
         sudo apt-get update
         sudo apt install python3-pip
-        sudp pip3 install awsebci --upgrade
+        sudo pip3 install awsebci --upgrade
       - aws-s3/sync:
           arguments: |
             --acl public-read \
