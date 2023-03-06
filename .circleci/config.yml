@@ -37,7 +37,7 @@ jobs:
       - aws-s3/copy:
           arguments: '--dryrun'
           from: bucket/build_asset.txt
-          install-aws-cli: false
+          install-aws-cli: true
           to: 's3://my-s3-bucket-name'
 workflows:
   s3-example:
