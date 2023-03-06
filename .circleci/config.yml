@@ -6,7 +6,7 @@ jobs:
     executor: aws-cli/default
     step: 
       - checkout
-      -aws-cli/setup: 
+      - aws-cli/setup: 
          profile-name: circlecidemo
       - run: echo "enter code here em gai oi"
 orbs:
