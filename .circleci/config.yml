@@ -8,6 +8,12 @@ jobs:
     steps:
       - checkout
       - run: mkdir bucket && echo "lorem ipsum" > bucket/build_asset.txt
+      - run:
+      name: Installing AWS CLI
+      command: | 
+        sudo apt-get update
+        sudo apt install python3-pip
+        sudp pip3 install awsebci --upgrade
       - aws-s3/sync:
           arguments: |
             --acl public-read \
@@ -18,7 +24,7 @@ jobs:
       - aws-s3/copy:
           arguments: '--dryrun'
           from: bucket/build_asset.txt
-          install-aws-cli: true
+          install-aws-cli: false
           to: 's3://my-s3-bucket-name'
 workflows:
   s3-example:
